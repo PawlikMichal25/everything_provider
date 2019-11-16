@@ -1,3 +1,4 @@
+import 'package:everything_provider/simple_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -11,9 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
       ),
       debugShowCheckedModeBanner: false,
-      home: Center(
-        child: Text('Restaurant'),
-      ),
+      home: SimplePage(),
     );
   }
 }
