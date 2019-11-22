@@ -1,6 +1,6 @@
 import 'package:everything_provider/data/food.dart';
 
-class Repository {
+class FoodRepository {
   static List<Food> getMenu() {
     return [
       Food(
