@@ -1,7 +1,11 @@
 import 'package:everything_provider/data/food.dart';
 
 class FoodRepository {
-  static List<Food> getMenu() {
+  static final _instance = FoodRepository();
+
+  static FoodRepository get getInstance => _instance;
+
+  List<Food> getMenu() {
     return [
       Food(
         name: 'Hamburger',

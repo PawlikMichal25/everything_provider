@@ -8,6 +8,9 @@ import 'food.dart';
 class OrderRepository {
   final _streamController = StreamController<Order>.broadcast();
   Order _currentOrder;
+  static final _instance = OrderRepository();
+
+  static OrderRepository get getInstance => _instance;
 
   OrderRepository() {
     _currentOrder = Order(HashMap());
