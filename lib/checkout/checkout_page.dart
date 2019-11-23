@@ -1,5 +1,5 @@
 import 'package:everything_provider/checkout/receipt_card.dart';
-import 'package:everything_provider/data/order_repository.dart';
+import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class CheckoutPage extends StatelessWidget {
         title: Text('Receipt'),
       ),
       body: Center(
-        child: Consumer<OrderRepository>(
+        child: Consumer<OrderBloc>(
           builder: (context, repo, _) {
             return Receipt(repo.currentOrder);
           },

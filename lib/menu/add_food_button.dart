@@ -1,5 +1,5 @@
 import 'package:everything_provider/data/food.dart';
-import 'package:everything_provider/data/order_repository.dart';
+import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,7 +10,7 @@ class AddFoodButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    OrderRepository repo = Provider.of(context, listen: false);
+    OrderBloc repo = Provider.of(context, listen: false);
     return RaisedButton(
       color: Colors.amber,
       onPressed: () => _onPressed(repo, food),
@@ -24,7 +24,7 @@ class AddFoodButton extends StatelessWidget {
     );
   }
 
-  void _onPressed(OrderRepository orderRepository, Food food) {
-    orderRepository.addFood(food);
+  void _onPressed(OrderBloc orderBloc, Food food) {
+    orderBloc.addFood(food);
   }
 }

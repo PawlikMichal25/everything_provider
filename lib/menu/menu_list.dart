@@ -1,11 +1,11 @@
 import 'package:everything_provider/data/food.dart';
-import 'package:everything_provider/data/food_repository.dart';
+import 'package:everything_provider/data/food_bloc.dart';
 import 'package:flutter/material.dart';
 
 import 'add_food_button.dart';
 
 class MenuList extends StatelessWidget {
-  final List<Food> _menu = FoodRepository.getMenu();
+  final List<Food> _menu = FoodBloc.getMenu();
 
   @override
   Widget build(BuildContext context) {

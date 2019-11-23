@@ -5,11 +5,11 @@ import 'package:everything_provider/data/order.dart';
 
 import 'food.dart';
 
-class OrderRepository {
+class OrderBloc {
   final _streamController = StreamController<Order>.broadcast();
   Order _currentOrder;
 
-  OrderRepository() {
+  OrderBloc() {
     _currentOrder = Order(HashMap());
     _streamController.add(_currentOrder);
   }

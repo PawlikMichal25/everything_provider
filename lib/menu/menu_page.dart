@@ -1,5 +1,5 @@
 import 'package:everything_provider/data/order.dart';
-import 'package:everything_provider/data/order_repository.dart';
+import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ import 'menu_list.dart';
 class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<OrderRepository>(
+    return Consumer<OrderBloc>(
       builder: (context, orderRepository, _) {
         return StreamProvider<Order>.value(
           value: orderRepository.orderStream,
