@@ -1,19 +1,19 @@
 import 'package:everything_provider/data/food.dart';
-import 'package:everything_provider/data/food_repository.dart';
-import 'package:everything_provider/data/order_repository.dart';
+import 'package:everything_provider/data/food_bloc.dart';
+import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
 
 import '../checkout/checkout_page.dart';
 
 class MenuPage extends StatelessWidget {
-  final _orderRepository = OrderRepository.getInstance;
-  final _foodRepository = FoodRepository.getInstance;
+  final _orderBloc = OrderBloc.getInstance;
+  final _foodBloc = FoodBloc.getInstance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: _buildTitle()),
-      body: _buildMenuList(_foodRepository.getMenu()),
+      body: _buildMenuList(_foodBloc.getMenu()),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _onFabClicked(context),
         child: Icon(Icons.shopping_cart),
@@ -23,8 +23,8 @@ class MenuPage extends StatelessWidget {
 
   Widget _buildTitle() {
     return StreamBuilder(
-      initialData: _orderRepository.currentOrder,
-      stream: _orderRepository.orderStream,
+      initialData: _orderBloc.currentOrder,
+      stream: _orderBloc.orderStream,
       builder: (_, snapshot) {
         double total = 0;
         if (snapshot.data != null) {
@@ -101,7 +101,7 @@ class MenuPage extends StatelessWidget {
   }
 
   void _onAddButtonClicked(Food food) {
-    _orderRepository.addFood(food);
+    _orderBloc.addFood(food);
   }
 
   void _onFabClicked(BuildContext context) {
