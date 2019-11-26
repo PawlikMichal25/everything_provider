@@ -1,5 +1,5 @@
 import 'package:everything_provider/data/order_bloc.dart';
-import 'package:everything_provider/data/styles.dart';
+import 'package:everything_provider/commons/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
