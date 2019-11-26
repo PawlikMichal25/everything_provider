@@ -1,4 +1,4 @@
-import 'package:everything_provider/data/styles.dart';
+import 'package:everything_provider/commons/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'menu/menu_page.dart';
