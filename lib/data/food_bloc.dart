@@ -1,11 +1,8 @@
 import 'package:everything_provider/data/food.dart';
 
 class FoodBloc {
-  static final _instance = FoodBloc();
 
-  static FoodBloc get getInstance => _instance;
-
-  List<Food> getMenu() {
+  static List<Food> getMenu() {
     return [
       Food(
         name: 'Hamburger',
