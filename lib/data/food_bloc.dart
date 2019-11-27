@@ -1,8 +1,7 @@
 import 'package:everything_provider/data/food.dart';
 
 class FoodBloc {
-
-  static List<Food> getMenu() {
+  List<Food> getMenu() {
     return [
       Food(
         name: 'Hamburger',
