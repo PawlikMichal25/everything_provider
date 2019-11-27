@@ -1,6 +1,8 @@
 import 'package:everything_provider/checkout/receipt_card.dart';
 import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:everything_provider/data/order_bloc.dart';
 
 class CheckoutPage extends StatelessWidget {
   final OrderBloc _orderBloc = OrderBloc.getInstance;

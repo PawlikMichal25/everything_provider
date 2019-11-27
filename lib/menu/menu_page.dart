@@ -3,6 +3,7 @@ import 'package:everything_provider/data/food_bloc.dart';
 import 'package:everything_provider/data/order.dart';
 import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../checkout/checkout_page.dart';
 
