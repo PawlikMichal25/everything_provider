@@ -8,9 +8,6 @@ import 'food.dart';
 class OrderBloc {
   final _streamController = StreamController<Order>.broadcast();
   Order _currentOrder;
-  static final _instance = OrderBloc();
-
-  static OrderBloc get getInstance => _instance;
 
   OrderBloc() {
     _currentOrder = Order(HashMap());

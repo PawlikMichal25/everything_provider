@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../checkout/checkout_page.dart';
 
 class MenuPage extends StatelessWidget {
-  final _orderBloc = OrderBloc.getInstance;
+  final _orderBloc = OrderBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class MenuPage extends StatelessWidget {
           appBar: AppBar(title: _buildTitle(order)),
           body: _buildMenuList(FoodBloc.getMenu()),
           floatingActionButton: FloatingActionButton(
-            onPressed: () => _onFabClicked(context),
+            onPressed: () => _onFabClicked(context, order),
             child: Icon(Icons.shopping_cart),
           ),
         );
@@ -103,10 +103,10 @@ class MenuPage extends StatelessWidget {
     _orderBloc.addFood(food);
   }
 
-  void _onFabClicked(BuildContext context) {
+  void _onFabClicked(BuildContext context, Order order) {
     Navigator.push(
       context,
-      MaterialPageRoute<void>(builder: (context) => CheckoutPage()),
+      MaterialPageRoute<void>(builder: (context) => CheckoutPage(order)),
     );
   }
 }
