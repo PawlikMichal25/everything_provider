@@ -1,5 +1,6 @@
 import 'package:everything_provider/data/food.dart';
 import 'package:everything_provider/data/food_bloc.dart';
+import 'package:everything_provider/data/menu.dart';
 import 'package:everything_provider/data/order.dart';
 import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,7 @@ class MenuPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(title: _buildTitle(order)),
           body: _buildMenuList(_foodBloc.getMenu()),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => _onFabClicked(context, order),
-            child: Icon(Icons.shopping_cart),
-          ),
+          floatingActionButton: _buildFAB(context, order),
         );
       },
     );
@@ -38,11 +36,11 @@ class MenuPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuList(List<Food> menu) {
+  Widget _buildMenuList(Menu menu) {
     return ListView.builder(
-      itemCount: menu.length,
+      itemCount: menu.food.length,
       itemBuilder: (context, index) {
-        return buildTile(menu[index]);
+        return buildTile(menu.food[index]);
       },
     );
   }
@@ -102,6 +100,13 @@ class MenuPage extends StatelessWidget {
 
   void _onAddButtonClicked(Food food) {
     _orderBloc.addFood(food);
+  }
+
+  Widget _buildFAB(BuildContext context, Order order) {
+    return FloatingActionButton(
+      onPressed: () => _onFabClicked(context, order),
+      child: Icon(Icons.shopping_cart),
+    );
   }
 
   void _onFabClicked(BuildContext context, Order order) {

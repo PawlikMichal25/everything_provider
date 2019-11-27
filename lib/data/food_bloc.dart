@@ -1,8 +1,9 @@
 import 'package:everything_provider/data/food.dart';
+import 'package:everything_provider/data/menu.dart';
 
 class FoodBloc {
-  List<Food> getMenu() {
-    return [
+  Menu getMenu() {
+    return Menu([
       Food(
         name: 'Hamburger',
         imageUrl: 'https://static.cuisineaz.com/400x320/i99425-hamburger.jpg',
@@ -44,6 +45,6 @@ class FoodBloc {
             'https://thewoksoflife.com/wp-content/uploads/2017/05/bibimbap-recipe-13.jpg',
         price: 4.50,
       ),
-    ];
+    ]);
   }
 }
