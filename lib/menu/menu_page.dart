@@ -1,5 +1,6 @@
 import 'package:everything_provider/data/food.dart';
 import 'package:everything_provider/data/food_bloc.dart';
+import 'package:everything_provider/data/order.dart';
 import 'package:everything_provider/data/order_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -10,27 +11,28 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: _buildTitle()),
-      body: _buildMenuList(FoodBloc.getMenu()),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _onFabClicked(context),
-        child: Icon(Icons.shopping_cart),
-      ),
-    );
-  }
-
-  Widget _buildTitle() {
     return StreamBuilder(
       initialData: _orderBloc.currentOrder,
       stream: _orderBloc.orderStream,
       builder: (_, snapshot) {
-        double total = snapshot.data.getTotal();
-        return Text(
-          'Total: $total \$',
-          style: TextStyle(fontSize: 16.0),
+        final Order order = snapshot.data;
+        return Scaffold(
+          appBar: AppBar(title: _buildTitle(order)),
+          body: _buildMenuList(FoodBloc.getMenu()),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () => _onFabClicked(context),
+            child: Icon(Icons.shopping_cart),
+          ),
         );
       },
+    );
+  }
+
+  Widget _buildTitle(Order order) {
+    double total = order.getTotal();
+    return Text(
+      'Total: $total \$',
+      style: TextStyle(fontSize: 16.0),
     );
   }
 
