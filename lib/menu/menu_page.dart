@@ -25,10 +25,7 @@ class MenuPage extends StatelessWidget {
       initialData: _orderBloc.currentOrder,
       stream: _orderBloc.orderStream,
       builder: (_, snapshot) {
-        double total = 0;
-        if (snapshot.data != null) {
-          total = snapshot.data.getTotal();
-        }
+        double total = snapshot.data.getTotal();
         return Text(
           'Total: $total \$',
           style: TextStyle(fontSize: 16.0),
