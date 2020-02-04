@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provider<OrderBloc>(
-      builder: (context) => OrderBloc(),
+      create: (context) => OrderBloc(),
       dispose: (context, repo) => repo.dispose(),
       child: MaterialApp(
         title: 'Restaurant',
