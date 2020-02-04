@@ -1,8 +1,8 @@
 import 'package:everything_provider/commons/formatter.dart';
-import 'package:everything_provider/data/order.dart';
+import 'package:everything_provider/changenotifier/order.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:everything_provider/data/order_bloc.dart';
+import 'package:everything_provider/changenotifier/order_change_notifier.dart';
 
 class Receipt extends StatelessWidget {
   final Order order;

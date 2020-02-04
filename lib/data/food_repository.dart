@@ -1,7 +1,7 @@
 import 'package:everything_provider/data/food.dart';
 import 'package:everything_provider/data/menu.dart';
 
-class FoodBloc {
+class FoodRepository {
   Menu getMenu() {
     return Menu([
       Food(
@@ -11,8 +11,7 @@ class FoodBloc {
       ),
       Food(
         name: 'Fish & Chips',
-        imageUrl:
-            'https://lovefoodies.com/wp-content/uploads/2015/05/Fish-and-chips-FG4-720x540.jpg',
+        imageUrl: 'https://lovefoodies.com/wp-content/uploads/2015/05/Fish-and-chips-FG4-720x540.jpg',
         price: 5.0,
       ),
       Food(
@@ -23,26 +22,22 @@ class FoodBloc {
       ),
       Food(
         name: 'Spaghetti',
-        imageUrl:
-            'https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-square-FS-0204.jpg',
+        imageUrl: 'https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-square-FS-0204.jpg',
         price: 3.50,
       ),
       Food(
         name: 'Pad Thai',
-        imageUrl:
-            'https://realhousemoms.com/wp-content/uploads/One-Pot-Pad-Thai-IG.jpg',
+        imageUrl: 'https://realhousemoms.com/wp-content/uploads/One-Pot-Pad-Thai-IG.jpg',
         price: 5.50,
       ),
       Food(
         name: 'Ramen',
-        imageUrl:
-            'https://www.theflavorbender.com/wp-content/uploads/2019/01/Easy-Chicken-Ramen-Featured.jpg',
+        imageUrl: 'https://www.theflavorbender.com/wp-content/uploads/2019/01/Easy-Chicken-Ramen-Featured.jpg',
         price: 6.0,
       ),
       Food(
         name: 'Bibimbap',
-        imageUrl:
-            'https://thewoksoflife.com/wp-content/uploads/2017/05/bibimbap-recipe-13.jpg',
+        imageUrl: 'https://thewoksoflife.com/wp-content/uploads/2017/05/bibimbap-recipe-13.jpg',
         price: 4.50,
       ),
     ]);

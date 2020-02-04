@@ -1,30 +1,37 @@
 import 'package:everything_provider/data/food.dart';
-import 'package:everything_provider/data/food_bloc.dart';
+import 'package:everything_provider/data/food_repository.dart';
 import 'package:everything_provider/data/menu.dart';
-import 'package:everything_provider/data/order.dart';
-import 'package:everything_provider/data/order_bloc.dart';
+import 'package:everything_provider/changenotifier/order.dart';
+import 'package:everything_provider/changenotifier/order_change_notifier.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../checkout/checkout_page.dart';
 
-class MenuPage extends StatelessWidget {
-  final _orderBloc = OrderBloc();
-  final _foodBloc = FoodBloc();
+class MenuPage extends StatefulWidget {
+  @override
+  _MenuPageState createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
+  final _orderChangeNotifier = OrderChangeNotifier();
+
+  final _foodRepository = FoodRepository();
+
+  @override
+  void initState() {
+    _orderChangeNotifier.addListener(() {
+      setState(() {});
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-      initialData: _orderBloc.currentOrder,
-      stream: _orderBloc.orderStream,
-      builder: (_, snapshot) {
-        final Order order = snapshot.data;
-        return Scaffold(
-          appBar: AppBar(title: _buildTitle(order)),
-          body: _buildMenuList(_foodBloc.getMenu()),
-          floatingActionButton: _buildFAB(context, order),
-        );
-      },
+    final Order order = _orderChangeNotifier.order;
+    return Scaffold(
+      appBar: AppBar(title: _buildTitle(order)),
+      body: _buildMenuList(_foodRepository.getMenu()),
+      floatingActionButton: _buildFAB(context, order),
     );
   }
 
@@ -99,7 +106,7 @@ class MenuPage extends StatelessWidget {
   }
 
   void _onAddButtonClicked(Food food) {
-    _orderBloc.addFood(food);
+    _orderChangeNotifier.addFood(food);
   }
 
   Widget _buildFAB(BuildContext context, Order order) {
