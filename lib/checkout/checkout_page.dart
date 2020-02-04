@@ -1,5 +1,5 @@
 import 'package:everything_provider/checkout/receipt_card.dart';
-import 'package:everything_provider/data/order_change_notifier.dart';
+import 'package:everything_provider/changenotifier/order_change_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

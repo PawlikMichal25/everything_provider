@@ -1,5 +1,5 @@
 import 'package:everything_provider/commons/formatter.dart';
-import 'package:everything_provider/data/order.dart';
+import 'package:everything_provider/changenotifier/order.dart';
 import 'package:flutter/material.dart';
 
 class Receipt extends StatelessWidget {

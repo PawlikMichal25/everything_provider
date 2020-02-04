@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:collection';
 
-import 'package:everything_provider/data/order.dart';
+import 'package:everything_provider/changenotifier/order.dart';
 import 'package:flutter/foundation.dart';
 
-import 'food.dart';
+import '../data/food.dart';
 
 class OrderChangeNotifier extends ChangeNotifier {
   Order _order;
