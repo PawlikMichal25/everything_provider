@@ -32,9 +32,7 @@ class Order {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Order &&
-          runtimeType == other.runtimeType &&
-          MapEquality<Food, int>().equals(_ordered, other._ordered);
+      other is Order && runtimeType == other.runtimeType && MapEquality<Food, int>().equals(_ordered, other._ordered);
 
   @override
   int get hashCode => _ordered.hashCode;
