@@ -1,8 +1,8 @@
+import 'package:everything_provider/change_notifier/order.dart';
+import 'package:everything_provider/change_notifier/order_change_notifier.dart';
 import 'package:everything_provider/data/food.dart';
 import 'package:everything_provider/data/food_repository.dart';
 import 'package:everything_provider/data/menu.dart';
-import 'package:everything_provider/changenotifier/order.dart';
-import 'package:everything_provider/changenotifier/order_change_notifier.dart';
 import 'package:flutter/material.dart';
 
 import '../checkout/checkout_page.dart';

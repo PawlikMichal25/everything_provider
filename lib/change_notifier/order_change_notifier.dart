@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:everything_provider/changenotifier/order.dart';
+import 'package:everything_provider/change_notifier/order.dart';
 import 'package:flutter/foundation.dart';
 
 import '../data/food.dart';

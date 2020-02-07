@@ -1,4 +1,5 @@
-import 'package:everything_provider/changenotifier/order.dart';
+
+import 'package:everything_provider/change_notifier/order.dart';
 
 class Formatter {
   static String getReceiptFrom(Order order){
