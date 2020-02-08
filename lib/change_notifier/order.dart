@@ -6,7 +6,7 @@ import 'package:collection/collection.dart';
 class Order {
   final HashMap<Food, int> _ordered;
 
-  Order(this._ordered);
+  const Order(this._ordered);
 
   Map<Food, int> getOrderedFood() => _ordered;
 
