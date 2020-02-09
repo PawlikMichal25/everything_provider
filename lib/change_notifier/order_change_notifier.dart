@@ -18,9 +18,4 @@ class OrderChangeNotifier extends ChangeNotifier {
     _order = _order.plusFood(food);
     notifyListeners();
   }
-
-  void cleanOrder() {
-    _order = Order(HashMap());
-    notifyListeners();
-  }
 }
