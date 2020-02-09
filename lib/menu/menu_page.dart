@@ -4,8 +4,6 @@ import 'package:everything_provider/data/food.dart';
 import 'package:everything_provider/data/food_repository.dart';
 import 'package:flutter/material.dart';
 
-import '../checkout/checkout_page.dart';
-
 class MenuPage extends StatefulWidget {
   @override
   _MenuPageState createState() => _MenuPageState();
