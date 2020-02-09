@@ -25,6 +25,12 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   @override
+  void dispose() {
+    _orderChangeNotifier.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final Order order = _orderChangeNotifier.order;
     return Scaffold(
