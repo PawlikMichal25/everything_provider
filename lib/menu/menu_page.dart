@@ -36,7 +36,6 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       appBar: AppBar(title: _buildTitle(order)),
       body: _buildMenuList(_foodRepository.getMenu()),
-      floatingActionButton: _buildFAB(context, order),
     );
   }
 
@@ -112,19 +111,5 @@ class _MenuPageState extends State<MenuPage> {
 
   void _onAddButtonClicked(Food food) {
     _orderChangeNotifier.addFood(food);
-  }
-
-  Widget _buildFAB(BuildContext context, Order order) {
-    return FloatingActionButton(
-      onPressed: () => _onFabClicked(context, order),
-      child: Icon(Icons.shopping_cart),
-    );
-  }
-
-  void _onFabClicked(BuildContext context, Order order) {
-    Navigator.push(
-      context,
-      MaterialPageRoute<void>(builder: (context) => CheckoutPage(order)),
-    );
   }
 }
